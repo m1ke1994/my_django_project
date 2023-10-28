@@ -17,6 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf.urls.static import static
+from django.conf import settings
+from my_first_app.views import my_first_app_list, my_first_app_detail, my_first_app_company
+
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", my_first_app_list, name="apartaments"),
+    path("<int:apart_id>/", my_first_app_detail, name="apartament"),
+    path("company/", my_first_app_company ,name="company")
+    
 ]
+
+urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
