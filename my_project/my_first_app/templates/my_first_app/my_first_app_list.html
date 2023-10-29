@@ -1,6 +1,11 @@
+{% extends "my_first_app/index.html" %}
 {% load static %}
 
-<!DOCTYPE html>
+
+    
+
+
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,9 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body> {% endcomment %}
+    
      <!-- шапка -->
-    <header>
+     {%block header%}
+   <header>
         <div class="header_conteiner">
             <nav class="navigation">
                 <div class="icon_home"><a href="index.html"><img src="/static/img/header/logo.png"  alt="home"></a></div>
@@ -24,8 +31,10 @@
             </nav>
         </div>
     </header>
-
-    <main>
+    {%endblock%}
+    {%block main%}
+    <main> 
+        
         <h1>Наши квартиры</h1>
         <div class="main_conteiner">
 
@@ -56,9 +65,11 @@
     {% endfor %}
 </div>
 </main>
-    
-{% comment %} footer {% endcomment %}
-<footer>
+{% endblock %}
+{%block footer%}
+
+{% comment %} footer {% endcomment %} 
+ <footer>
     <div class="footer_conteiner">
         <div class="footer_links">
             <a href="index.html"><img src="static/img/header/logo.png" alt="logo"></a>
@@ -85,6 +96,7 @@
             </div>
         </div>
      
-</footer>
+</footer> 
+{%endblock%}
       </body>
       </html>
